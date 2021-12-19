@@ -29,25 +29,29 @@ function UnReadArticles() {
             <Button style={{ backgroundColor: 'skyBlue', position: 'absolute', top: '0', left: '0' }} onClick={goBackClicked} >Back</Button>
             <Typography style={{ textAlign: 'center' }} variant='h3' gutterBottom={true} >Un Read Articles</Typography>
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                <Card style={{ width: '600px' }} >
-                    <List style={{ cursor: 'pointer' }} >
-                        {
-                            readArticle?.map((sectionItem, index) => {
+                {
 
-                                return <ListItem key={sectionItem.abstract}>
-                                    <ListItemText
-                                        primary={sectionItem.title}
+                    <Card style={{ width: '600px' }} >
+                        <List style={{ cursor: 'pointer' }} >
+                            {readArticle?.length > 0 ? (
+                                readArticle?.map((sectionItem, index) => {
 
-                                        secondary={sectionItem.abstract ? sectionItem.abstract : null}
-                                    />
-                                    <IconButton edge="end" aria-label="click" onClick={() => deleteArticle({ name: sectionItem.title })} >
-                                        <DeleteIcon />
-                                    </IconButton>
-                                </ListItem>
-                            })
-                        }
-                    </List>
-                </Card>
+                                    return <ListItem key={sectionItem.abstract}>
+                                        <ListItemText
+                                            primary={sectionItem.title}
+
+                                            secondary={sectionItem.abstract ? sectionItem.abstract : null}
+                                        />
+                                        <IconButton edge="end" aria-label="click" onClick={() => deleteArticle({ name: sectionItem.title })} >
+                                            <DeleteIcon />
+                                        </IconButton>
+                                    </ListItem>
+                                })
+                            ) : <h3>No Article Found...</h3>
+                            }
+                        </List>
+                    </Card>
+                }
             </div>
         </div>
     )

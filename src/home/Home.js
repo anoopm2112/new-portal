@@ -24,6 +24,10 @@ import { useNavigate } from 'react-router-dom';
 function Home() {
     let articleArray = []
     const navigate = useNavigate();
+    const { email } = JSON.parse(localStorage.getItem('userDetails')) || {};
+    if (!email) {
+        navigate('/')
+    }
     const [sectionData, setSectionData] = useState(null);
     const [newsArticleData, setNewsArticleData] = useState(null);
     const [unReadSessionItem, setUnReadSessionItem] = useState([]);
@@ -92,21 +96,15 @@ function Home() {
                 />
                 <Button style={{ backgroundColor: 'skyBlue' }} onClick={handleUnReadArticle} >UnReadArticle</Button>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-
                     <Card style={{ width: '250px' }} >
+                        <h3>Section</h3>
                         <List style={{ cursor: 'pointer' }} >
                             {
                                 sectionData?.map((sectionItem, index) => {
 
                                     return <ListItem key={index}>
-
-
                                         <ListItemText
                                             primary={sectionItem.display_name}
-
-
-                                        // secondary={secondary ? 'Secondary text' : null}
-
                                         />
                                         <IconButton edge="end" aria-label="click" onClick={() => handleSectionClick({ name: sectionItem.display_name })} >
                                             <MouseIcon />
@@ -118,6 +116,8 @@ function Home() {
                     </Card>
 
                     <Card style={{ width: '600px' }} >
+                        <h3>Article</h3>
+
                         <List style={{ cursor: 'pointer' }} >
                             {
                                 newsArticleData?.map((sectionItem, index) => {
@@ -131,9 +131,7 @@ function Home() {
                                         <IconButton edge="end" aria-label="click" onClick={() => handleUnReadItem({ sectionItem: sectionItem })} >
                                             <MarkUnreadChatAlt />
                                         </IconButton>
-                                        <IconButton edge="end" aria-label="click" onClick={() => handleSectionClick({ name: sectionItem.display_name })} >
-                                            <DeleteIcon />
-                                        </IconButton>
+
                                     </ListItem>
                                 })
                             }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
@@ -6,8 +6,10 @@ import { Button } from '@mui/material';
 import './Login.css'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 function SignUp() {
+    const [successMessage, setSuccessmessage] = useState(false)
     const validationSchema = Yup.object().shape({
         email: Yup.string()
             .required('Email is required')
@@ -23,14 +25,17 @@ function SignUp() {
             .matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed for this field ")
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
-    const { register, handleSubmit, watch, formState: { errors } } = useForm(formOptions);
+    const { register, reset, handleSubmit, watch, formState: { errors } } = useForm(formOptions);
 
 
 
     const onSubmit = data => {
         let registeredUser = data
+        if (registeredUser) {
+            setSuccessmessage(true)
+        }
         localStorage.setItem('registeredUser', JSON.stringify(registeredUser));
-
+        reset()
     }
     return (
         <div >
@@ -49,6 +54,14 @@ function SignUp() {
 
                             <Button variant="outlined" type='submit' style={{ width: '40%' }}>Register</Button>
                         </div>
+                        {
+                            successMessage &&
+                            < Stack sx={{ width: '100%' }
+                            } spacing={2} >
+                                <Alert severity="success">Successfully registered please sign in...</Alert>
+                            </Stack >
+
+                        }
                     </Card>
                 </div>
             </form>

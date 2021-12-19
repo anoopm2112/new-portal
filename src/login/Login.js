@@ -44,8 +44,8 @@ function Login() {
 
 
     return (
-        <div >
-            <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <div >
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
 
                     <Card className='loginCard' >
@@ -68,8 +68,8 @@ function Login() {
                         }
                     </Card>
                 </div>
-            </form>
-        </div >
+            </div >
+        </form>
     )
 }
 
