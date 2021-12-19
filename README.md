@@ -13,6 +13,20 @@
 hi after cloning please do npm install, technology i used is react js, material ui is used for styling purpose, for form building and validation i used reactive hook form and yup resolver, i used local storage for storing purpose, for api calling i used axios,  i used function components and hooks for my project
 if you are facing any issues while running please contact me
 
+ist page should be the sign up page please register with your credential then only you can login otherwise the login button will be disabled after registering try to login with the same email address other wise an error will thrown after login you can see an home page with articles and section
+i added pagniation but i couldint find the total count in the api result so i hardcoded upto 100
+
+if you click the mouse button in section it will filter article based on the section (cllient side filter no api used)
+ you can add articles to read me later by just clicking  button near to each article
+ 
+ then if you click unread article button you can see the selected articles also you can remove article if you needed
+ 
+ also i added a profile page where  and a logout button if you logout everyting in the localstorage will cleared
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
