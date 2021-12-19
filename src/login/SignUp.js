@@ -39,7 +39,6 @@ function SignUp() {
     }
     return (
         <div >
-            <h3>Sign Up page</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
 
