@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+
+
+![Screenshot from 2021-12-19 13-22-09](https://user-images.githubusercontent.com/89691988/146667974-df21dc1d-aa3f-4df4-b5ff-790b1ce9b6a3.png)
+![Screenshot from 2021-12-19 13-22-24](https://user-images.githubusercontent.com/89691988/146667995-c395a955-077d-449d-993a-cb8dc9dc75d0.png)
+![Screenshot from 2021-12-19 13-22-17](https://user-images.githubusercontent.com/89691988/146667996-b1a4223d-a12d-46fc-8deb-23aeeeab4ee7.png)
+![Screenshot from 2021-12-19 13-23-16](https://user-images.githubusercontent.com/89691988/146667997-bef81058-c04c-465f-b7fa-d0fca4c1b6b0.png)
+![Screenshot from 2021-12-19 13-23-04](https://user-images.githubusercontent.com/89691988/146667998-326ce976-5d7a-49e5-96e2-d3caae5b4e44.png)
+![Screenshot from 2021-12-19 13-22-45](https://user-images.githubusercontent.com/89691988/146667989-f107029c-b949-4b82-b64a-cf46f467e7ca.png)
+
+# Getting Started with my project
+
+
+hi after cloning please do npm install, technology i used is react js, material ui is used for styling purpose, for form building and validation i used reactive hook form and yup resolver, i used local storage for storing purpose, for api calling i used axios,  i used function components and hooks for my project
+if you are facing any issues while running please contact me
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
