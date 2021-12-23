@@ -4,19 +4,14 @@ import AppBarComponent from './AppBarComponent';
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Button } from '@mui/material';
 import Card from '@mui/material/Card';
-import { getAllSection } from '../ApiUtils'
 import { API_KEY, SECTION_API_URL, ARTICLE_API_URL } from '../ApiUtils'
 import axios from 'axios'
 import TablePagination from '@mui/material/TablePagination';
 import MouseIcon from '@mui/icons-material/Mouse';
-import DeleteIcon from '@mui/icons-material/Delete';
-import MarkUnreadChatAltIcon from '@mui/icons-material/MarkUnreadChatAlt';
 import IconButton from '@mui/material/IconButton';
-import { articleResult } from './Json';
 import MarkUnreadChatAlt from '@mui/icons-material/MarkUnreadChatAlt';
 import { useNavigate } from 'react-router-dom';
 
@@ -30,7 +25,6 @@ function Home() {
     }
     const [sectionData, setSectionData] = useState(null);
     const [newsArticleData, setNewsArticleData] = useState(null);
-    const [unReadSessionItem, setUnReadSessionItem] = useState([]);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(10);
 

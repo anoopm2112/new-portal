@@ -3,12 +3,10 @@ import { useForm } from "react-hook-form";
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Button } from '@mui/material';
 import './Login.css'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
@@ -28,7 +26,7 @@ function Login() {
             .required('Password is required')
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
-    const { register, handleSubmit, watch, formState: { errors } } = useForm(formOptions);
+    const { register, handleSubmit, formState: { errors } } = useForm(formOptions);
 
 
 
