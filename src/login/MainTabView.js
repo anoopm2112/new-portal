@@ -39,6 +39,7 @@ function MainTabView() {
     const handleChangeIndex = (index) => {
         setValue(index);
     };
+    
     return (
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
             <Box sx={{ bgcolor: 'background.paper', width: 500 }}>

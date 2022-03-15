@@ -10,6 +10,7 @@ import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+
 function Login() {
     const [notExistError, setNotExistError] = React.useState(false);
 
@@ -47,13 +48,24 @@ function Login() {
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
 
                     <Card className='loginCard' >
-                        <TextField variant='outlined' name='email' type="text" label='Email' {...register("email")} />
+                        <TextField 
+                            variant='outlined' 
+                            name='email' 
+                            type="text" 
+                            label='Email' 
+                            {...register("email")} 
+                        />  
                         <small style={{ color: 'red' }} >{errors.email?.message}</small>
-                        <TextField label='Passowrd' type='password' {...register("password", { required: true })} />
+                        <TextField 
+                            label='Passowrd' 
+                            type='password' 
+                            {...register("password", { required: true })} 
+                        />
                         {errors.password && <small style={{ color: 'red' }}>{errors.password?.message}</small>}
                         <div style={{ textAlign: 'center' }}>
 
-                            <Button variant="outlined" disabled={email ? false : true} type='submit' style={{ width: '40%' }}>Login</Button>
+                            <Button variant="outlined" disabled={email ? false : true} 
+                                type='submit' style={{ width: '40%' }}>Login</Button>
 
                         </div>
                         {
